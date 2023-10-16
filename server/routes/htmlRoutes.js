@@ -1,4 +1,5 @@
 const path = require('path');
+// creating the routes for the webpack
 
 module.exports = (app) =>
   app.get('/', (req, res) =>
