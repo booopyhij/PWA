@@ -1,3 +1,4 @@
+// imports for the webpack to be created
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackPwaManifest = require('webpack-pwa-manifest');
 const path = require('path');
@@ -17,14 +18,16 @@ module.exports = () => {
         install: "./src/js/install.js",
       },
       output: {
-        //output for bundles
+        //output for where to store the bundles
         filename: "[name].bundle.js",
+        //storing bundles in the 'dist' folder
         path: path.resolve(__dirname, "dist"),
       },
       plugins: [
-        //generates html file and injects our bundles
+        //generates html file and injects it into our bundles
         new HtmlWebpackPlugin({
           template: "./index.html",
+          //naming the application once downloaded
           title: "Just Another text Editor(JATE)",
         }),
         //inject custom service worker
@@ -45,6 +48,7 @@ module.exports = () => {
           publicPath: "./",
           icons: [
             {
+                //adding images into the json file
               src: path.resolve("src/images/logo.png"),
               sizes: [96, 128, 192, 256, 384, 512],
               destination: path.join("assets", "icons"),
@@ -55,8 +59,9 @@ module.exports = () => {
   
       module: {
         rules: [
-          //css loader
+          //loading the css into the webpack
           {
+            //regex for css, including all files with .css attatched
             test: /\.css$/i,
             use: ["style-loader", "css-loader"],
           },
@@ -67,6 +72,7 @@ module.exports = () => {
             use: {
               loader: "babel-loader",
               options: {
+                //preset for babel and environmental variable
                 presets: ["@babel/preset-env"],
                 plugins: [
                   "@babel/plugin-proposal-object-rest-spread",
