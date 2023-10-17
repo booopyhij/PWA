@@ -28,7 +28,8 @@ export const putDb = async (content) => {
     const result = await request;
      // console.log to make sure the logic runs properly
   
-    console.log("data stored successfully", result);
+    console.log("data stored", result);
+    console.error('data not stored') 
   };
   
   // logic that gets all the content from the database
@@ -47,8 +48,9 @@ export const putDb = async (content) => {
     const result = await request;
   // console.log to make sure the logic runs properly
     console.log("result.value", result);
-  
+    console.error('data not retrieved'); 
     return result.value;
+    
   };
 
 initdb();
