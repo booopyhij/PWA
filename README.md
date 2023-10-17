@@ -27,8 +27,11 @@
   click the install button in the browser window or download the code from github and run npm i in both the client and server folders
   
   ## Usage
-  in the browser you're able to edit simple text
+  in the browser you're able to edit simple text editor. It works similar to a notepad. The user can download the application.
 
+  https://booopyhij-text-editor-b65690ded147.herokuapp.com/
+
+![Alt text](image.png)
  
   ## Questions
     
